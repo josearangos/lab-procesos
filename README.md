@@ -42,7 +42,18 @@ p: utiliza la variable de entorno PATH para buscar el archivo nombrado en el arg
 
 
 5. Escriba ahora un programa que use ```wait()``` para esperar que el proceso hijo finalice su ejecución. ¿Cuál es el valor de retorno de la función ```wait()```?, ¿Qué pasa si usted usa la función ```wait``` en el hijo?
-6. Haga un programa, como el del ejercicio anterior, con una breve modificación, la cual consiste en usar ```waitpid()``` en lugar de ```wait()```. ¿Cuándo podría ser ```waitpid()``` útil?
+6. Haga un programa, como el del ejercicio anterior, con una breve modificación, la cual consiste en usar ```waitpid()``` en lugar de ```wait()```.
+
+ ¿Cuándo podría ser ```waitpid()``` útil?
+
+ El proceso waitpid() permite verificar el estado de los procesos hijos y a diferencia del proceso wait este puede verificar el estado del proceso y tomar una desición a partir de este, la descripcion literal de este proceso es similar a la del wait:
+
+       La  función  waitpid  suspende  la  ejecución  del  proceso  en  curso  hasta  que un hijo
+       especificado por el argumento pid ha terminado, o hasta que  se  produce  una  señal  cuya
+       acción es finalizar el proceso actual o llamar a la función manejadora de la señal.
+
+Lo unico diferente, es que este puede tomar decisiones sin tener que esperar la finalización del proceso hijo.
+
 7. Escriba un programa que cree un proceso hijo y entonces en el proceso hijo cierre la salida estandar (```STDOUT FILENO```). ¿Qué pasa si el hijo llama ```printf()``` para imprimir alguna salida después de cerrar el descriptor?
 8. Escriba un programa que cree dos hijos y conecte la salida estándar de un hijo a la entrada estándar del otro usando la llamada a sistema ```pipe()```
 
