@@ -13,7 +13,14 @@ Realizar los siguientes ejercicios:
   * ¿Qué sucede con la variable cuando el proceso hijo y el padre cambian el valor de ```x```?
 2. Escriba un programa que abra un archivo (con la llamada ```open()```) y entonces llame a ```fork()```. **Nota**: El siguiente [enlace](https://www.geeksforgeeks.org/input-output-system-calls-c-create-open-close-read-write/) puede ser de utilidad para entender la llamada ```open()```.
   * ¿Pueden el padre y el hijo acceder al file descriptor retornado por ```open()```? 
+
+    Si, ambos padre he hijo pueden acceder al descriptor obtenido por el Open() la archivo, y el open por su parte verifica si el archivo esta creado, si no el mismo lo crea.
+
   * ¿Qué pasa si ellos empiezan a escribir el archivo de manera concurrente, es decir, a la misma vez?
+
+    Teoricamente esto no pasa, ya que padre he hijo son dos procesos, los cuales existen en contextos diferentes si se ejecutan en momentos diferentes. Aunque parescan ejecutarsen al mimo tiempo, esto se  debe a la ilusion de tiempo compartido en el que  parece que los dos se esten ejecutando al mismo tiempo. En conclusión no pueden acceder al archivo de forma concurrente, si no que se turnan segun su ejecución para acceder a el.
+    
+
 3. Escriba un programa usando ```fork()```. El proceso hijo imprimirá ```"Hello"```; el proceso padre imprimirá ```"goodbye"```. Usted deberá asegurar que el proceso hijo imprima en primer lugar; ¿usted podría hacer esto sin llamar ```wait()``` en el padre? 
 4. Escriba un programa que llame ```fork()``` y entonces llame alguna forma de ```exec()``` para correr el programa ```/bin/ls```. Intente probar todas las variaciones de la familia de funciones ```exec()``` incluyendo (en linux) ```execl()```, ```execle()```, ```execlp()```, ```execv()```, ```execvp()``` y ```execvpe()```. ¿Por qué piensa usted que existen tantas variaciones para la misma llamada básica?
 5. Escriba ahora un programa que use ```wait()``` para esperar que el proceso hijo finalice su ejecución. ¿Cuál es el valor de retorno de la función ```wait()```?, ¿Qué pasa si usted usa la función ```wait``` en el hijo?
