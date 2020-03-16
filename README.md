@@ -28,10 +28,6 @@ Realizar los siguientes ejercicios:
 
 Por que cada una permite omitir o especificar los parametros de forma distinta como lo son: el nombre del fichero a ser ejecutado, puntero al vector de argumentos y puntero al vector de ambiente.
 
-	  -	     e	    p
-l	execl	execle	execlp
-v	execv	execve	execvp
-
 * int execl(char const *path, char const *arg0, ...);
 * int execle(char const *path, char const *arg0, ..., char const *envp[]);
 * int execlp(char const *file, char const *arg0, ...);
