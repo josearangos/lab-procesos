@@ -22,7 +22,29 @@ Realizar los siguientes ejercicios:
     
 
 3. Escriba un programa usando ```fork()```. El proceso hijo imprimirá ```"Hello"```; el proceso padre imprimirá ```"goodbye"```. Usted deberá asegurar que el proceso hijo imprima en primer lugar; ¿usted podría hacer esto sin llamar ```wait()``` en el padre? 
-4. Escriba un programa que llame ```fork()``` y entonces llame alguna forma de ```exec()``` para correr el programa ```/bin/ls```. Intente probar todas las variaciones de la familia de funciones ```exec()``` incluyendo (en linux) ```execl()```, ```execle()```, ```execlp()```, ```execv()```, ```execvp()``` y ```execvpe()```. ¿Por qué piensa usted que existen tantas variaciones para la misma llamada básica?
+4. Escriba un programa que llame ```fork()``` y entonces llame alguna forma de ```exec()``` para correr el programa ```/bin/ls```. Intente probar todas las variaciones de la familia de funciones ```exec()``` incluyendo (en linux) ```execl()```, ```execle()```, ```execlp()```, ```execv()```, ```execvp()``` y ```execvpe()```. 
+
+¿Por qué piensa usted que existen tantas variaciones para la misma llamada básica?
+
+Por que cada una permite omitir o especificar los parametros de forma distinta como lo son: el nombre del fichero a ser ejecutado, puntero al vector de argumentos y puntero al vector de ambiente.
+
+	  -	     e	    p
+l	execl	execle	execlp
+v	execv	execve	execvp
+
+* int execl(char const *path, char const *arg0, ...);
+* int execle(char const *path, char const *arg0, ..., char const *envp[]);
+* int execlp(char const *file, char const *arg0, ...);
+* int execv(char const *path, char const *argv[]);
+* int execve(char const *path, char const *argv[], char const *envp[]);
+* int execvp(char const *file, char const *argv[]);
+
+l - Los argumentos de la línea de comandos se pasan individualmente (una lista) a la función.
+v - Los argumentos de la línea de comandos se pasan a la función como una matriz (vector) de punteros.
+e - Se pasa explícitamente una matriz de punteros a variables de entorno a la nueva imagen de proceso.
+p: utiliza la variable de entorno PATH para buscar el archivo nombrado en el argumento de ruta a ejecutar.
+
+
 5. Escriba ahora un programa que use ```wait()``` para esperar que el proceso hijo finalice su ejecución. ¿Cuál es el valor de retorno de la función ```wait()```?, ¿Qué pasa si usted usa la función ```wait``` en el hijo?
 6. Haga un programa, como el del ejercicio anterior, con una breve modificación, la cual consiste en usar ```waitpid()``` en lugar de ```wait()```. ¿Cuándo podría ser ```waitpid()``` útil?
 7. Escriba un programa que cree un proceso hijo y entonces en el proceso hijo cierre la salida estandar (```STDOUT FILENO```). ¿Qué pasa si el hijo llama ```printf()``` para imprimir alguna salida después de cerrar el descriptor?
