@@ -4,6 +4,7 @@
 
 *Andres Felipe Ramirez Hernandez
 
+Nota: las imagenes correspondientes a cada punto se encuentran en la carpeta codigo dentro de esta estan las soluciones a cada uno de los puntos.
 ## 1. Objetivos ##
 1. Familiarizarse con las diferentes estructuras y funciones relacionadas con el manejo de procesos en linux.
 2. Codificar programas que hagan uso del API de procesos.
