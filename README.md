@@ -1,6 +1,7 @@
 # PRÁCTICA 1 - PROCESOS #
 
 *Jose Alberto Arango Sánchez
+
 *Andres Felipe Ramirez Hernandez
 
 ## 1. Objetivos ##
