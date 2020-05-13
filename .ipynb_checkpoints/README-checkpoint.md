@@ -1,8 +1,8 @@
 # PRÁCTICA 1 - PROCESOS #
 
-#Jose Alberto Arango Sánchez
+*Jose Alberto Arango Sánchez
 
-#Andres Felipe Ramirez Hernandez
+*Andres Felipe Ramirez Hernandez
 
 Nota: las imagenes correspondientes a cada punto se encuentran en la carpeta codigo dentro de esta estan las soluciones a cada uno de los puntos.
 ## 1. Objetivos ##
