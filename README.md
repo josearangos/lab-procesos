@@ -1,5 +1,8 @@
 # PRÁCTICA 1 - PROCESOS #
 
+*Jose Alberto Arango Sánchez
+*Andres Felipe Ramirez Hernandez
+
 ## 1. Objetivos ##
 1. Familiarizarse con las diferentes estructuras y funciones relacionadas con el manejo de procesos en linux.
 2. Codificar programas que hagan uso del API de procesos.
